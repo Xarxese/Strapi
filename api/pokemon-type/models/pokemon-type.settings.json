@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pokemon_types",
+  "info": {
+    "name": "PokemonType",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pokemon_id": {
+      "via": "pokemon_types",
+      "model": "pokemons"
+    },
+    "type_id": {
+      "collection": "type",
+      "via": "pokemon_types",
+      "model": "type"
+    }
+  }
+}
