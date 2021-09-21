@@ -8,5 +8,5 @@ See more https://strapi.io/
 -   PokemonsType (Relational table with pokemons[id] and type[id] )
 -   Type (All type of pokemon )
 ## BootStrap.js 
--   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i retrieve the data from pokeapi 
-    and where i iterate to create the pokemon and the types .
+-   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i get the data from pokeapi 
+    and i iterate to create the pokemon and the types .
