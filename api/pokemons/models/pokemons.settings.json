@@ -19,12 +19,12 @@
       "type": "string",
       "unique": true
     },
+    "picture": {
+      "type": "text"
+    },
     "pokemon_types": {
       "via": "pokemon_id",
       "collection": "pokemon-type"
-    },
-    "picture": {
-      "type": "text"
     }
   }
 }

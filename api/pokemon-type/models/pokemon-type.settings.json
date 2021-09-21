@@ -13,8 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "pokemon_id": {
-      "via": "pokemon_types",
-      "model": "pokemons"
+      "model": "pokemons",
+      "via": "pokemon_types"
     },
     "type_id": {
       "collection": "type",
