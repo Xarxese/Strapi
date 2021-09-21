@@ -2,12 +2,12 @@ const pokemonDiv = document.querySelector(".row");
 const url = "http://localhost:1337"
 let AllPokemon = [];
 
-const connectUserForm = document.forms.connect;
-const inputLogin =  connectUserForm.login;
-const inputPassword = connectUserForm.password;
-console.log(inputLogin);
+// const connectUserForm = document.forms.connect;
+// const inputLogin =  connectUserForm.login;
+// const inputPassword = connectUserForm.password;
+// console.log(inputLogin);
 
-connectUserForm.addEventListener("submit", login)
+// connectUserForm.addEventListener("submit", login)
 
 init();
 
