@@ -22,9 +22,10 @@
     "picture": {
       "type": "text"
     },
-    "pokemon_types": {
-      "via": "pokemon_id",
-      "collection": "pokemon-type"
+    "types": {
+      "collection": "type",
+      "via": "pokemons",
+      "dominant": true
     }
   }
 }

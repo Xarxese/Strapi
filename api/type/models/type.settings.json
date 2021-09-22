@@ -16,10 +16,9 @@
       "type": "string",
       "unique": true
     },
-    "pokemon_types": {
-      "via": "type_id",
-      "collection": "pokemon-type",
-      "dominant": true
+    "pokemons": {
+      "via": "types",
+      "collection": "pokemons"
     }
   }
 }

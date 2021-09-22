@@ -1,22 +1,32 @@
 const pokemonDiv = document.querySelector(".row");
 const url = "http://localhost:1337"
 let AllPokemon = [];
+const connectUserForm = document.forms.connect;
+const inputLogin =  connectUserForm.login;
+const inputPassword = connectUserForm.password;
 
-// const connectUserForm = document.forms.connect;
-// const inputLogin =  connectUserForm.login;
-// const inputPassword = connectUserForm.password;
-// console.log(inputLogin);
+const urlSite = window.location.href
 
-// connectUserForm.addEventListener("submit", login)
+console.log(urlSite);
+
+connectUserForm.addEventListener("submit", login);
 
 init();
 
 function init() {
-    getPokemon();
+    if (urlSite == "http://127.0.0.1:5500/StrapiApiFront/pokemon.html") {
+        getPokemon();
+    }
 }
 function getPokemon() {
-    fetch(`${url}/pokemons`)
-    .then(data => data.json())
+    fetch(`${url}/pokemons`,{
+            method: "GET",
+            headers :{
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjMyMzQ4MjU3LCJleHAiOjE2MzQ5NDAyNTd9.51DR4g1vOQE63kcG3ZAHb0vj7Uiz8bGADk8zkBW6gqI",
+                "Accept":"application/json",
+                "Content-Type":"application/json",
+            }
+            }).then(data => data.json())
     .then(result =>{
         AllPokemon = result;
         console.log(AllPokemon);
@@ -56,21 +66,27 @@ function renderPokemon(pokemons) {
 
 function login(e) {
     e.preventDefault();
-    const inputLoginValue = inputLogin.value.trim()
-    const inputPasswordValue = inputPassword.value.trim()
-    console.dir(inputLoginValue,inputPasswordValue)
-    const payload = {
-        username: inputLoginValue,
-        password: inputPasswordValue
+    const email = inputLogin.value.trim()
+    const password = inputPassword.value.trim()
+
+    const data = {
+        identifier:email,
+        password:password
     }
-    fetch(`${url}/connect/`, {
+
+    fetch(`${url}/auth/local/register`, {
         method: "POST",
         headers :{
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjMyMzQ4MjU3LCJleHAiOjE2MzQ5NDAyNTd9.51DR4g1vOQE63kcG3ZAHb0vj7Uiz8bGADk8zkBW6gqI",
             "Accept":"application/json",
             "Content-Type":"application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
     }).then(response => {
-        console.log(response);
+        console.log('Well done!');
+        console.log('User profile', response);
+        // document.location.href="http://127.0.0.1:5500/StrapiApiFront/pokemon.html"
+    }).catch(error =>{
+        console.log(error);
     })
 }
