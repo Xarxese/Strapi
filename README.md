@@ -8,7 +8,7 @@
 -   Type (All types of pokemon).
 -   Relational table with pokemons[id] and type[id] ManyToMany.
 ## BootStrap.js 👨‍💻
--   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i get the data from pokeapi.
+-   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i get the data from pokeapi
     and i iterate to create the pokemon and the types.
 ## Client 🧐
 -   Extract the zip folder "StrapiApiFront".
