@@ -11,7 +11,7 @@
 -   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i get the data from pokeapi 
     and i iterate to create the pokemon and the types.
 ## Client 🧐
--   Extract ZIP File StrapiApiFront
+-   Extract the zip folder "StrapiApiFront"
 ## My notes📖
 -   https://www.notion.so/Test-N-2-bee28eefee354f3ebac8e61f668764ae
 ## Test Project on local machine 🤓
