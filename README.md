@@ -18,7 +18,7 @@
 -   npm run develop
 -   Sign-up on http://localhost:1337/admin
 -   Create a new user with role authenticate
--   In parameter check if role authenticate is on find, findone
+-   In parameter check if role authenticate is on find, findone for pokemon
 -   run live serve on file StrapiApiFront
 
 ## KNOW BUGS ! 🤔
