@@ -38,16 +38,10 @@ function login(e) {
         localStorage.setItem("Utilisateur", JSON.stringify(user));
     
         console.log("Utilisateur trouvé", token);
-        // setCookie(user, 365);
-        document.location.href="http://127.0.0.1:5500/pokemon.html";
+        document.location.href="http://127.0.0.1:5500/StrapiApiFront/pokemon.html";
     }).catch(error =>{
         console.log(error);
     })
-    // function setCookie(name,token,exdays) {
-    //     const d = new Date();
-    //     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    //     let expires = "expires="+d.toUTCString();
-    //     document.cookie = name + ";" + expires + ";path=/;"+"SameSite=Lax";
-    // }
+
       
 }
