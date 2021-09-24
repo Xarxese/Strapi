@@ -9,4 +9,6 @@ See more https://strapi.io/
 -   Type (All type of pokemon )
 ## BootStrap.js 
 -   I launch a "https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0" request on which i get the data from pokeapi 
-    and i iterate to create the pokemon and the types .
+    and i iterate to create the pokemon and the types.
+## Client
+-   File StrapiApiFront
