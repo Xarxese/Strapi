@@ -31,24 +31,23 @@ function login(e) {
                 "Validation échouée ! l'utilisateur n'existe pas"
             );
         }
-        const user = responseData.user.username;
+        const username = responseData.user.username;
         const token = responseData.jwt;
-        
-        exportUser(user)
+        var user = { 'user': username, 'jwt': token};
+
+        localStorage.setItem("Utilisateur", JSON.stringify(user));
+    
         console.log("Utilisateur trouvé", token);
-        setCookie(user, token, 365);
-        // document.location.href="http://127.0.0.1:5500/pokemon.html"
+        // setCookie(user, 365);
+        document.location.href="http://127.0.0.1:5500/pokemon.html";
     }).catch(error =>{
         console.log(error);
     })
-    function setCookie(name,token,exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = "expires="+d.toUTCString();
-        document.cookie = name + "=" + token + ";" + expires + ";path=/;"+"SameSite=Lax";
-    }
-    export function exportUser(user) {
-        return user;
-    }
+    // function setCookie(name,token,exdays) {
+    //     const d = new Date();
+    //     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    //     let expires = "expires="+d.toUTCString();
+    //     document.cookie = name + ";" + expires + ";path=/;"+"SameSite=Lax";
+    // }
       
 }

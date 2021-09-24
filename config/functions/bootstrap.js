@@ -38,6 +38,7 @@ module.exports = () => {
     function createPokemon(e) {
         P.getPokemonByName(e) // with Promise
             .then(function(response) {
+                console.log(response);
                 let nameCurrent = response.name;
                 let typeArray = []
                 
@@ -51,12 +52,20 @@ module.exports = () => {
                             "\n-------\n"
                             +typeArray+
                             "\n-------");
+                
+                // ! Tant que mon tableau temporaire typeArray[]  contiens au moins 2 valeures
+                // ! Alors on procéde a la création du type dans DB
+                // ! Si le tableau typeAlreadyPush[] contient déjà le type à l'index[0] dans typeArray[] alors on supprime cette valeur de typeArray[]
+                //  ! Sinon on envoie cette valeur dans typeAlreadyPush[] puis on crée le type puis on le supprime de ce tableau
+
                 while (typeArray.length <= 2 && typeArray.length != 0) {
-                    console.log("on envoie dans la base puis on retire du tableau : "+typeArray);
+                    console.log("Envoie du type");
                     
                     if (typeAlreadyPush.includes(typeArray[0])) {
+                        console.log("Si le type est inclus dans le tableaux on le retire: "+typeArray);
                         typeArray.shift();
                     } else{
+                        console.log("on envoie le type :"+typeArray+" dans le tableau \n ---------------------\n  puis on creé le type dans la DB");
                         typeAlreadyPush.push(typeArray[0])
                         strapi.services.type.create({
                             value: typeArray[0],

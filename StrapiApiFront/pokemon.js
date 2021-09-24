@@ -1,4 +1,3 @@
-import { exportUser } from './index';
 const pokemonDiv = document.querySelector(".row");
 const url = "http://localhost:1337"
 let AllPokemon = [];
@@ -7,35 +6,16 @@ init();
 
 function init() {
 
-    let exportUser = exportUser();
+    let data = JSON.parse(localStorage.getItem("Utilisateur"));
+    console.log(data.user);
+    console.log(data.jwt);
+    if (data != "") {
+        let username = data.user;
+        let jwt = data.jwt;
+        getPokemon(jwt)
+        document.getElementById("user").innerHTML= username;
 
-    checkCookie(exportUser);
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      }
-      
-    function checkCookie(user) {
-        let jwt = getCookie(user);
-        console.log(jwt);
-        if (jwt != "") {
-            
-            getPokemon(jwt)
-        }
     }
-
-
     
 }
 
@@ -51,6 +31,7 @@ function getPokemon(jwt) {
             }).then(data => data.json())
     .then(result =>{
         AllPokemon = result;
+        console.log(AllPokemon);
         renderPokemon(AllPokemon);
     })
     .catch(err => {console.error(err)})
