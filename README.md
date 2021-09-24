@@ -25,3 +25,11 @@
 ## KNOW BUGS ! 🤔
 - 100 Max query to get each pokemon in DB.
 - The types are not correctly related to the pokemon but you can attribute manually types for each pokemons.
+
+
+## SCREENSHOTS 📸
+-   HOME
+![ScreenShot](ScreenshotL.png)
+
+-   POKEMONS
+![ScreenShot](ScreenshotP.png)
