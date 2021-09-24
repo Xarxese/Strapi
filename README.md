@@ -13,6 +13,7 @@
 ## Client 🧐
 -   Extract the zip folder "StrapiApiFront".
 ## My notes📖
+-   Work time : 20 hours.
 -   https://www.notion.so/Test-N-2-bee28eefee354f3ebac8e61f668764ae
 ## Test Project on local machine 🤓
 -   npm run develop.
